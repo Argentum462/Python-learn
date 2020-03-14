@@ -1,0 +1,10 @@
+Mar 07 15:54:52 arch journal[1]: SERVICE_START pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=systemd-fsck-root comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+Mar 07 15:54:52 arch journal[1]: SERVICE_START pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=systemd-journald comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+Mar 13 23:58:05 arch journal[1]: SERVICE_STOP pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=systemd-homed comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+Mar 13 23:58:05 arch bumblebeed[567]: [ 7168.980997] [WARN]Received Terminated signal.
+Mar 13 23:58:05 arch gnome-shell[935]: == Stack trace for context 0x55602e4eb450 ==
+Mar 13 23:58:05 arch gnome-shell[935]: #0   7ffcb0059c40 b   resource:///org/gnome/gjs/modules/core/overrides/GObject.js:571 (92cc1fa34c0 @ 25)
+Mar 13 23:58:05 arch journal[1]: SERVICE_STOP pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=accounts-daemon comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+Mar 13 23:58:05 arch journal[1]: SERVICE_STOP pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=colord comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+Mar 13 23:58:05 arch gnome-shell[935]: #1   55603134b0a0 i   /home/denis/.local/share/gnome-shell/extensions/desktop-icons@csoriano/desktopGrid.js:210 (37a41d49e4c0 @ 87)
+END
