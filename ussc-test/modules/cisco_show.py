@@ -71,7 +71,7 @@ def compare(master: List, config: List) -> List:
 
     diff = []
     for s in config:
-        if s not in master and re.search('\w', s):
+        if s not in master and re.search(r'\w', s):
             diff.append(s)
     return diff
 
