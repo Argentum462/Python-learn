@@ -7,15 +7,15 @@ def main(args):
     path = vars(args)['path']
     verbose = vars(args)['verbose']
     max_width = vars(args)['max_width']
-    windows_secedit(path, verbose, int(max_width))
+    translate = vars(args)['translate']
+    windows_secedit(path, verbose, int(max_width), translate)
 
 
-def windows_secedit(path: str, is_verbose: bool, max_width: int):
+def windows_secedit(path: str, is_verbose: bool, max_width: int, is_translate: bool):
     master_map = {}
     reduction_map = {}
 
     pattern = r"\[(?P<table>[\w\s]+)\]"
-
 
     with open(path, 'r') as filez:
         current_table = ''
@@ -26,7 +26,8 @@ def windows_secedit(path: str, is_verbose: bool, max_width: int):
                 reduction_map[current_table] = {} 
             else:
                 key = s.split('=')[0].strip()
-                key = translate(key)
+                if is_translate == False:    
+                    key = translate(key)
                 value = s.split('=')[1]
                 if len(value) > max_width:
                     reduction_map[current_table][key] = value
@@ -36,7 +37,10 @@ def windows_secedit(path: str, is_verbose: bool, max_width: int):
         
 
     for k in master_map:
-        print(k)
+        if is_translate == False:
+            print(translate(k))
+        else:
+            print(k)
         print(tabulate(master_map[k].items(), headers=['Параметр', 'Значение'], tablefmt="grid"))
         print()
         if is_verbose == True:

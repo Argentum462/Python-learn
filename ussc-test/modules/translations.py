@@ -1,5 +1,4 @@
 def get():
-
     translations = {
         "Unicode": "Юникод",
         "System Access": "Системный доступ",

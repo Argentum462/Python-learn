@@ -17,6 +17,7 @@ audit_parser.set_defaults(func = windows_audit.main)
 secedit_parser = subparsers.add_parser('s', help='Разобрать файл secedit')
 secedit_parser.add_argument('path', help='Путь к файлу политики безопаности')  # Обязательный аргумент
 secedit_parser.add_argument('-v', '--verbose', action='store_true', help='Отображать сокращенные значения')  # Опциональный аргумент-флаг
+secedit_parser.add_argument('-t', '--translate', action='store_true', help='Отображать без перевода')
 secedit_parser.add_argument('-m', '--max_width', default = 90, help='Максимальная длина значения таблицы (по умолчанию 90)')
 secedit_parser.set_defaults(func = windows_secedit.main)
 
