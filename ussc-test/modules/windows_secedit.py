@@ -1,5 +1,6 @@
 import re
 from tabulate import tabulate
+import modules.translations as translations
 
 
 def main(args):
@@ -25,6 +26,7 @@ def windows_secedit(path: str, is_verbose: bool, max_width: int):
                 reduction_map[current_table] = {} 
             else:
                 key = s.split('=')[0].strip()
+                key = translate(key)
                 value = s.split('=')[1]
                 if len(value) > max_width:
                     reduction_map[current_table][key] = value
@@ -48,3 +50,7 @@ def windows_secedit(path: str, is_verbose: bool, max_width: int):
                 break
         
 
+def translate(string: str) -> str:
+    if string in translations.get().keys():
+        return translations.get()[string]
+    return string
